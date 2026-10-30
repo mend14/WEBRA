@@ -1,0 +1,50 @@
+GeoAR - Prototipo HTML, CSS y JavaScript
+
+PRUEBA EN WINDOWS
+1. Extrae el ZIP completo en una carpeta.
+2. Con Python 3 instalado, ejecuta INICIAR_WINDOWS.bat.
+3. Abre http://localhost:8000 (si aparece antes de que arranque, recarga).
+4. Conserva la ventana del servidor abierta. Para detenerlo: Ctrl+C.
+Alternativa desde CMD en esta carpeta:
+  py -m http.server 8000 --bind 127.0.0.1
+No abras index.html directamente mediante doble clic.
+
+PRUEBA EN IPHONE
+Abre en Safari:
+https://geoar-laboratorio-jorge-1029.sergraficojp.chatgpt.site
+Inicia sesion con tu cuenta. Usa el terreno de ejemplo y pulsa
+Ver en realidad aumentada. Carga tu GLB desde Archivos del iPhone.
+Los modelos cargados en PC no se transfieren al telefono.
+
+ALOJAMIENTO PROPIO
+Publica todos los archivos de esta carpeta en un alojamiento estatico
+con HTTPS. index.html debe quedar en la raiz publicada.
+El servidor local anterior sirve para probar en PC, no desde el iPhone.
+WebXR requiere un contexto seguro: una direccion HTTP de red local
+no equivale a un sitio HTTPS.
+
+ARCHIVOS
+index.html: interfaz.
+style.css: estilos adaptables.
+app.js: carga local, controles y activacion RA.
+model-viewer.min.js: componente model-viewer 4.1.0 (licencia Apache 2.0;
+conserva los avisos incluidos en el archivo).
+terreno.glb: terreno sintetico generado para demostrar el visor.
+
+MODELOS
+Acepta GLB con texturas integradas, maximo 100 MB. Empieza con modelos
+pequenos. OBJ, FBX, LAS y LAZ requieren conversion antes de cargarlos.
+Usa un origen local para evitar problemas de precision con coordenadas
+UTM grandes. Conserva aparte la transformacion georreferenciada.
+La escala 1x conserva las unidades del modelo; no certifica sus medidas.
+Los archivos del usuario se procesan localmente, sin subirlos al servidor.
+Las fuentes tipograficas requieren Internet; hay fuentes alternativas.
+Modelos comprimidos pueden necesitar decodificadores descargados por el visor.
+
+ALCANCE Y VALIDACION
+Colocacion sobre superficies, sin alineacion UTM ni precision topografica.
+iPhone: Quick Look. Android: navegador/dispositivo compatible con WebXR.
+PC: vista 3D con WebGL 2 y aceleracion grafica.
+Se reviso sintaxis JavaScript e interfaz. El navegador de pruebas tenia
+WebGL desactivado: renderizado 3D y RA pendientes de prueba en equipo real.
+No incluye reconstruccion fotogrametrica desde fotografias.
